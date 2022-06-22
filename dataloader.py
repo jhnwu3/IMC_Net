@@ -8,6 +8,6 @@ arrays = {}
 for k in f.keys():
     print(k)
     print(f[k])
-    arrays[k] = np.array(f[k])
+    # arrays[k] = np.array(f[k])
 # data_dict = mat73.loadmat("CyTOFData.mat")
 # print(len(data_dict))
