@@ -1,3 +1,3 @@
 FileData = load('CyTOFData.mat');
-csvwrite('CyTOFData.csv', FileData.M)
+csvwrite('CyTOFData.csv', FileData)
 save('FileData','-v6')
