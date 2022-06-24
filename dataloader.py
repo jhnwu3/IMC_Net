@@ -7,6 +7,7 @@ with h5py.File('CyTOFData.mat', 'r') as f:
 arrays = {}
 for k in f.keys():
     print(k)
+    f[]
     # print(f[k])
     # arrays[k] = np.array(f[k])
 # data_dict = mat73.loadmat("CyTOFData.mat")
