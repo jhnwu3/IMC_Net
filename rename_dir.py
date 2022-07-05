@@ -1,5 +1,6 @@
 import os
 import re
+from pathlib import Path
 def findID(gate):
   return re.findall("_000[0-9]*", gate)
 
@@ -25,7 +26,14 @@ for fn in os.listdir(basedir):
   if fn in imgDirs:
     newName = gates[imgDirs.index(fn)]
     newName = findID(newName)[0]
-    print("pid" + newName[4:])
+    newName = "pid" + newName[4:]
+    my_file = Path(newName)
+    samePID = 1
+    while my_file.exists():
+      newName = str(samePID) + newName
+      my_file = Path(newName)
+      samePID+=1
+    os.rename(fn ,newName)
   
 #   if ',' in fn:
 #     continue # Already in the correct form
